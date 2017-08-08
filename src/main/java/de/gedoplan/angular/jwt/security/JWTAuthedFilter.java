@@ -1,5 +1,5 @@
+package de.gedoplan.angular.jwt.security;
 
-import de.gedoplan.angular.jwt.security.JWTAuthed;
 import de.gedoplan.angular.jwt.service.JWTService;
 import java.io.IOException;
 import javax.annotation.Priority;
