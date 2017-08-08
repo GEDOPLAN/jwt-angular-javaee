@@ -1,11 +1,8 @@
 
 import de.gedoplan.angular.jwt.security.JWTAuthed;
 import de.gedoplan.angular.jwt.service.JWTService;
-import io.jsonwebtoken.Jwts;
 import java.io.IOException;
-import java.security.Key;
 import javax.annotation.Priority;
-import javax.crypto.KeyGenerator;
 import javax.inject.Inject;
 import javax.ws.rs.Priorities;
 import javax.ws.rs.container.ContainerRequestContext;
@@ -27,7 +24,7 @@ public class JWTAuthedFilter implements ContainerRequestFilter {
     String token = requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
 
     try {
-      jwtService.valid(token);
+      jwtService.valid(token.split(" ")[1]);
 
     } catch (Exception e) {
       requestContext.abortWith(Response.status(Response.Status.UNAUTHORIZED).build());

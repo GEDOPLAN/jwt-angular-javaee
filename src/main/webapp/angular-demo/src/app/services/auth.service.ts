@@ -12,11 +12,21 @@ export class AuthService {
   login(username: string, password: string): Promise<boolean> {
     return new Promise((resolve, reject) => {
       this.http
-        .post('http://localhost:8080/angular-jwt-1.0-SNAPSHOT/rest/login', { username, password })
-        .subscribe( resp => {
-          localStorage.setItem('JWT-TOKEN', 'dfdf');
+        .post('http://localhost:8080/angular-jwt-1.0-SNAPSHOT/rest/login', { username, password }, { responseType: 'text' })
+        .subscribe((resp: string) => {
+          localStorage.setItem('JWT-TOKEN', resp);
           resolve(true);
-        }, error => reject(error));
+        }, error => reject);
     });
+  }
+
+  logout(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.http.post('http://localhost:8080/angular-jwt-1.0-SNAPSHOT/rest/logout', {})
+        .subscribe(r => {
+          localStorage.removeItem('JWT-TOKEN');
+        })
+    });
+
   }
 }

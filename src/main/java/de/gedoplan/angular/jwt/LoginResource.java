@@ -23,7 +23,7 @@ public class LoginResource {
   @POST
   public Response login(LoginEntity login) {
     if (login.getUsername().equals("demo") && login.getPassword().equals("secret")) {
-      return Response.ok(jwtService.generateJWTToken(login.getUsername())).build();
+      return Response.status(200).entity(jwtService.generateJWTToken(login.getUsername())).build();
     } else {
       return Response.status(Response.Status.UNAUTHORIZED).build();
     }

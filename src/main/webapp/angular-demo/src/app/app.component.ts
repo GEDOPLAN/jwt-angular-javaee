@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+  constructor(private auth: AuthService) {
+
+  }
+
+  status(): boolean {
+    return localStorage.getItem('JWT-TOKEN') !== null;
+  }
+
+  logout() {
+    this.auth.logout();
+  }
 }

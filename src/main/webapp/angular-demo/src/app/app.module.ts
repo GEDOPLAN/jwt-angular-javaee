@@ -1,3 +1,4 @@
+import { AuthGuardService } from './services/auth-guard.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -10,14 +11,15 @@ import { AuthService } from './services/auth.service'
 import { AppComponent } from './app.component';
 import { APP_PAGES, APP_ROUTES } from './app.routes';
 
-export const getToken = () => {
+
+export const getToken = function() {
   return localStorage.getItem('JWT-TOKEN');
 }
 
 @NgModule({
   declarations: [
     AppComponent,
-    APP_PAGES,
+    APP_PAGES
   ],
   imports: [
     BrowserModule,
@@ -26,12 +28,14 @@ export const getToken = () => {
     HttpClientModule,
     JwtModule.forRoot({
       config: {
-        tokenGetter: getToken
+        tokenGetter: getToken,
+        whitelistedDomains: ['localhost:8080']
       }
     })
   ],
   providers: [
-    AuthService
+    AuthService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
