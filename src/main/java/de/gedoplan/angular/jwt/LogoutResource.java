@@ -11,6 +11,11 @@ import javax.inject.Inject;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 
+/**
+ * Logout-Resource.
+ *
+ * @author Dominik Mathmann, GEDOPLAN
+ */
 @Path("logout")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.TEXT_PLAIN)

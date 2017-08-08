@@ -1,16 +1,19 @@
 package de.gedoplan.angular.jwt.service;
 
-import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
-import javax.ws.rs.NotAuthorizedException;
 
 /**
- * @author Dominik Mathmann
+ * JWT-Service für die Generrierung und Prüfung von JWT-Tokens.
+ *
+ * Zusätzlich ist hier eine sehr simple "Speicherung" der gültigen Tokens implementiert,
+ * die es möglich macht das er Benutzer sich aktiv abmelden kann.
+ *
+ * @author Dominik Mathmann, GEDOPLAN
  */
 @ApplicationScoped
 public class JWTService {

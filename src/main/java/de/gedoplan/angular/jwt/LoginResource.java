@@ -1,6 +1,5 @@
 package de.gedoplan.angular.jwt;
 
-import com.sun.org.apache.xerces.internal.util.Status;
 import de.gedoplan.angular.jwt.entity.LoginEntity;
 import de.gedoplan.angular.jwt.service.JWTService;
 import javax.ws.rs.Consumes;
@@ -12,6 +11,11 @@ import javax.ws.rs.core.Response;
 
 import javax.inject.Inject;
 
+/**
+ * Login Resource. Prüft (statisch) Username und Passwort und generriert einen JWT Token.
+ *
+ * @author Dominik Mathmann, GEDOPLAN
+ */
 @Path("login")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.TEXT_PLAIN)

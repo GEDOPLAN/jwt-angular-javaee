@@ -1,10 +1,7 @@
 package de.gedoplan.angular.jwt.entity;
 
-import java.util.List;
-
 /**
- *
- * @author Dominik Mathmann
+ * @author Dominik Mathmann, GEDOPLAN
  */
 public class LoginEntity {
 

@@ -1,8 +1,7 @@
 package de.gedoplan.angular.jwt.entity;
 
 /**
- *
- * @author Dominik Mathmann
+ * @author Dominik Mathmann, GEDOPLAN
  */
 public class DemoEntity {
 
