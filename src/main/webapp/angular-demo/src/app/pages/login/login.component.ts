@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('');
       },
       e => {
-        this.message = 'Login failed';
+        this.message = 'Login nicht erfolgreich';
       }
     )
   }
