@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { APP_PAGES, APP_ROUTES } from './app.routes';
 
 
-export const getToken = function() {
+export function getToken() {
   return localStorage.getItem('JWT-TOKEN');
 }
 
